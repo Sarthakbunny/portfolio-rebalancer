@@ -176,4 +176,5 @@ if __name__ == "__main__":
     output_path = "recommended_modifications.csv"
     final_csv = merge_results(portfolio_mods=mods, outside_portfolio_buyables=outside_portfolio, output_path=output_path)
     
+    print("\nFinal revised portfolio saved to " + output_path)
     print(final_csv.head())
