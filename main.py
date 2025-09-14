@@ -4,6 +4,8 @@ import json
 import os
 from dotenv import load_dotenv
 import re
+import groww_portfolio_formatter as formatter
+
 
 prompt_template = """
 You are a Chief Financial Planner. Your expertise lies in creating and managing investment portfolios to achieve specific financial goals.
@@ -167,7 +169,8 @@ def merge_results(portfolio_mods, outside_portfolio_buyables, output_path: str):
 ## Main
 #############################
 if __name__ == "__main__":
-    portfolio = parse_csv("sample_portfolio.csv")
+    # portfolio = parse_csv("sample_portfolio.csv")
+    portfolio = formatter.format_groww_stock_portfolio("groww_portfolio.xlsx")
     
     prompt = generate_prompt(portfolio_df=portfolio, goal="Create wealth", invest_time="5", risk_appetite="HIGH")
     
