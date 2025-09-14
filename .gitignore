@@ -1,0 +1,13 @@
+# Ignore environment files
+.env
+
+# Virtual env
+venv/
+__pycache__/
+*.pyc
+
+#Ignore the provided and output csv
+*.csv
+
+# Vscode
+.vscode
