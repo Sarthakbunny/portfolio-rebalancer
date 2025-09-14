@@ -27,26 +27,25 @@ It:
 * Tested locally (no Colab needed).
 * Easy to extend and integrate.
 
----
+## ⚙️ How it Works
 
-## 📂 Project Structure
-
+```mermaid
+flowchart TD
+    A[CSV Portfolio] --> B[parse_csv]
+    B --> C[rebalance_portfolio with Gemini AI]
+    C --> D1[Current Portfolio Modifications]
+    C --> D2[Outside Portfolio Buy Suggestions]
+    D1 --> E[merge_results]
+    D2 --> E
+    E --> F[Final Rebalanced CSV]
 ```
-portfolio-rebalancer/
-│── main.py                # Entry point
-│── requirements.txt       # Dependencies
-│── sample_portfolio.csv   # Example portfolio CSV
-│── README.md              # Documentation
-```
-
----
 
 ## 🛠️ Installation & Setup
 
 ### 1. Clone Repo
 
 ```bash
-git clone https://github.com/<your-username>/portfolio-rebalancer.git
+git clone https://github.com/sarthakbunny/portfolio-rebalancer.git
 cd portfolio-rebalancer
 ```
 
@@ -66,9 +65,9 @@ pip install -r requirements.txt
 
 ### 4. Set Your Gemini API Key
 
-```bash
-export GEMINI_API_KEY="your_api_key_here"   # Mac/Linux
-set GEMINI_API_KEY="your_api_key_here"      # Windows PowerShell
+Create a \.env file and
+```env
+GEMINI_API_KEY = "GEMINI_API_KEY"
 ```
 
 ---
@@ -126,7 +125,3 @@ INFOSYS LTD,INFY,Buy,10,"Diversification into IT sector",Outside Portfolio
 ## 📝 License
 
 MIT License © 2025
-
----
-
-Do you want me to also add a **“How it Works (workflow diagram)”** in the README, so investors/devs get a quick visual of CSV → AI → Final CSV?
